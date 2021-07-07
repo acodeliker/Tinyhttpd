@@ -342,6 +342,21 @@ int get_line(int sock, char *buf, int size)
 
     return(i);
 }
+/**
+ * translate to chinese
+ * 2021.7.xx 
+ * 
+ * 从socket获取一行无论该行以换行符、回车符还是 CRLF 组合结尾。用空字符终止读取的字符串。
+ * 如果在缓冲区结束之前没有找到换行符，则字符串以空值终止。
+ * 如果读取了上述三个行终止符中的任何一个，则字符串的最后一个字符将是换行符，并且字符串将以空字符终止。
+ * 参数：套接字描述符
+ *      保存数据的缓冲区
+ *      缓冲区的大小
+ * 返回：存储的字节数（不包括空值）
+ * 
+ **/
+
+
 
 /**********************************************************************/
 /* Return the informational HTTP headers about a file. */
@@ -456,6 +471,17 @@ int startup(u_short *port)
         error_die("listen");
     return(httpd);
 }
+/**
+ * translate to chinese
+ * 2021.7.xx
+ * 
+ * 该函数启动一个监听指定端口下的网络连接的进程，也就是建立S端套接字
+ * 如果指定端口号为0，会动态分配一个端口并在修改源端口后重新绑定为S端端口
+ * 
+ * 参数：指向包含需要连接的端口变量指针
+ **/
+
+
 
 /**********************************************************************/
 /* Inform the client that the requested web method has not been
